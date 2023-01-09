@@ -1,18 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   colors.c                                           :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aburnott <aburnott@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/11 10:04:01 by aburnott          #+#    #+#             */
-/*   Updated: 2022/11/11 10:50:57 by aburnott         ###   ########.fr       */
+/*   Created: 2023/01/09 14:53:13 by aburnott          #+#    #+#             */
+/*   Updated: 2023/01/09 14:54:09 by aburnott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/fractol.h"
 
-int	create_trgb(int t, int r, int g, int b)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	return (t << 24 | r << 16 | g << 8 | b);
+	size_t	i;
+
+	i = 0;
+	if (n == 0)
+		return (0);
+	while (s1[i] && s2[i] && s1[i] == s2[i] && i < n - 1)
+		i++;
+	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 }
