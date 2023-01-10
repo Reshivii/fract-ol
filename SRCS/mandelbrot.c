@@ -6,7 +6,7 @@
 /*   By: aburnott <aburnott@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 13:15:56 by aburnott          #+#    #+#             */
-/*   Updated: 2023/01/09 15:56:07 by aburnott         ###   ########.fr       */
+/*   Updated: 2023/01/10 14:09:50 by aburnott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void	mandelbrot(t_mlx *mlx)
 			if (i < 100)
 				value = i;
 			int color = value * 255 / 100;
-		  	my_mlx_pixel_put(mlx, x, y, color << 16 | color << 9);
+		  	my_mlx_pixel_put(mlx, x, y, color << 16 | color << 4);
 			x++;
 		}
 		y++;

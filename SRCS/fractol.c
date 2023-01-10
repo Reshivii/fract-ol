@@ -6,7 +6,7 @@
 /*   By: aburnott <aburnott@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 11:47:24 by aburnott          #+#    #+#             */
-/*   Updated: 2023/01/09 15:55:02 by aburnott         ###   ########.fr       */
+/*   Updated: 2023/01/10 14:12:14 by aburnott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void my_mlx_pixel_put(t_mlx *mlx, int x, int y, int color)
 {
 	char	*dst;
 
-	if (x < 0 || y < 0 || x >= 900 || y >= 600)
+	if (x < 0 || y < 0 || x >= WIDTH || y >= HEIGHT)
 		return ;
 	dst = mlx->addr + (y * mlx->line_lenght + x * (mlx->bits_per_pixel / 8));
 	*(unsigned int*)dst = color;
@@ -54,8 +54,8 @@ int	main(int ac, char **av)
 	(void) av;
 	
 	mlx.init = mlx_init();
-	mlx.win = mlx_new_window(mlx.init, 900, 600, "Fractol"); //re
-	mlx.img = mlx_new_image(mlx.init, 900, 600);
+	mlx.win = mlx_new_window(mlx.init, WIDTH, HEIGHT, "Fractol"); //re
+	mlx.img = mlx_new_image(mlx.init, WIDTH, HEIGHT);
 	mlx.addr = mlx_get_data_addr(mlx.img, &mlx.bits_per_pixel, &mlx.line_lenght, &mlx.endian);
 	mlx.move = malloc(sizeof(*mlx.move));
 	if (!mlx.move)

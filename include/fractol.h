@@ -6,7 +6,7 @@
 /*   By: aburnott <aburnott@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 10:04:14 by aburnott          #+#    #+#             */
-/*   Updated: 2023/01/09 15:14:31 by aburnott         ###   ########.fr       */
+/*   Updated: 2023/01/10 14:12:42 by aburnott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@
 # include "mlx.h"
 # include <stdlib.h>
 # include <stdio.h>
-# define WIDTH 900
-# define HEIGHT 600
+# define WIDTH 1440
+# define HEIGHT 920
 //# include "../ft_printf/ft_printf.h"
 
 enum
