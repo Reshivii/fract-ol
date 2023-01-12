@@ -6,7 +6,7 @@
 /*   By: aburnott <aburnott@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 10:04:14 by aburnott          #+#    #+#             */
-/*   Updated: 2023/01/10 14:12:42 by aburnott         ###   ########.fr       */
+/*   Updated: 2023/01/12 11:29:30 by aburnott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include "mlx.h"
 # include <stdlib.h>
 # include <stdio.h>
+# include <unistd.h>
 # define WIDTH 1440
 # define HEIGHT 920
 //# include "../ft_printf/ft_printf.h"
@@ -111,6 +112,11 @@ typedef struct	s_mlx
 int		create_trgb(int t, int r, int g, int b);
 void	julia(t_mlx *mlx);
 void	mandelbrot(t_mlx *mlx);
-void my_mlx_pixel_put(t_mlx *mlx, int x, int y, int color);
+int		init_mlx(t_mlx *mlx);
+void	my_mlx_pixel_put(t_mlx *mlx, int x, int y, int color);
+int		ft_close(t_mlx *mlx);
+int		key_pressed(int keycode, t_mlx *mlx);
+int		ft_released(int keycode, t_mlx *mlx);
+void	print_error(char *str);
 
 #endif

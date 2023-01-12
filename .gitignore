@@ -1,3 +1,4 @@
 *.o
 fractol
 .DS_Store
+*.a
