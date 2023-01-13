@@ -6,7 +6,7 @@
 /*   By: aburnott <aburnott@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 10:04:14 by aburnott          #+#    #+#             */
-/*   Updated: 2023/01/12 11:29:30 by aburnott         ###   ########.fr       */
+/*   Updated: 2023/01/13 11:51:03 by aburnott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,6 +93,8 @@ typedef struct s_data
 	int x;
 	int y;
 }	t_data;
+
+
 
 
 typedef struct	s_mlx

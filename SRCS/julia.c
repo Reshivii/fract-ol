@@ -6,7 +6,7 @@
 /*   By: aburnott <aburnott@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 11:36:48 by aburnott          #+#    #+#             */
-/*   Updated: 2023/01/12 11:12:31 by aburnott         ###   ########.fr       */
+/*   Updated: 2023/01/13 11:52:34 by aburnott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,20 +21,21 @@ void	julia(t_mlx *mlx)
 	while (y < HEIGHT) {
 		x = 0;
 	  	while (x < WIDTH) {
-	  	  double c_re = -0.7;
-	  	  double c_im = 0.2935;
-	  	  double z_re = 1.5 * (x - WIDTH / 2) / (0.5 * WIDTH);
-	  	  double z_im = (y - HEIGHT / 2) / (0.5 * HEIGHT);
+	  	  double c_re = -0.8;
+	  	  double c_im = 0.156;
+		  double zoom = 1.5;
+	  	  double z_re = 1.5 * (x - WIDTH / 2) / (0.5 * zoom * WIDTH);
+	  	  double z_im = (y - HEIGHT / 2) / (0.5 * zoom * HEIGHT);
 	  	  int value = 0;
 	  	  int iteration = 0;
-	  	  while (z_re * z_re + z_im * z_im < 4 && iteration < 200) {
+	  	  while (z_re * z_re + z_im * z_im < 4 && iteration < 140) {
 	  	    double new_re = z_re * z_re - z_im * z_im + c_re;
 	  	    double new_im = 2 * z_re * z_im + c_im;
 	  	    z_re = new_re;
 	  	    z_im = new_im;
 	  	    iteration++;
 	  	  }
-	  	  if (iteration < 200) {
+	  	  if (iteration < 140) {
 	  	    value = iteration;
 	  	  }
 	  	  int color = value * 255 / 100;

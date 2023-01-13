@@ -6,7 +6,7 @@
 /*   By: aburnott <aburnott@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 11:47:24 by aburnott          #+#    #+#             */
-/*   Updated: 2023/01/12 12:44:11 by aburnott         ###   ########.fr       */
+/*   Updated: 2023/01/13 11:52:50 by aburnott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	main(int ac, char **av)
 		mlx_hook(mlx.win, ON_KEYDOWN, 0, key_pressed, &mlx);
 		mlx_hook(mlx.win, ON_KEYUP, 0, ft_released, &mlx);
 		//mlx_hook(mlx.win, ON_MOUSEDOWN, 0, mouse_draw, &mlx);
-		julia(&mlx);
+		mandelbrot(&mlx);
 		mlx_put_image_to_window(mlx.init, mlx.win, mlx.img, 0, 0);
 		mlx_loop(mlx.init);
 	}
