@@ -6,7 +6,7 @@
 /*   By: aburnott <aburnott@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 10:04:14 by aburnott          #+#    #+#             */
-/*   Updated: 2023/01/13 11:51:03 by aburnott         ###   ########.fr       */
+/*   Updated: 2023/01/14 16:24:31 by aburnott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,23 +80,6 @@ enum {
 	ON_DESTROY = 17
 };
 
-typedef struct	s_move
-{
-	int	up;
-	int down;
-	int right;
-	int left;
-}		t_move;
-
-typedef struct s_data
-{
-	int x;
-	int y;
-}	t_data;
-
-
-
-
 typedef struct	s_mlx
 {
 	void	*init;
@@ -106,8 +89,8 @@ typedef struct	s_mlx
 	int bits_per_pixel;
 	int line_lenght;
 	int endian;
-	t_move *move;
-	t_data *data;
+	int	x;
+	int	y;
 }	t_mlx;
 
 

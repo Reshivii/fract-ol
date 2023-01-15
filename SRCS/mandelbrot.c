@@ -6,7 +6,7 @@
 /*   By: aburnott <aburnott@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 13:15:56 by aburnott          #+#    #+#             */
-/*   Updated: 2023/01/13 11:56:39 by aburnott         ###   ########.fr       */
+/*   Updated: 2023/01/14 17:04:47 by aburnott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@ void	mandelbrot(t_mlx *mlx)
 {
 	double	x;
 	double	y;
-	double	p_i;
-	double	p_r;
+	double	const_i;
+	double	const_r;
 	double	new_r;
 	double	new_i;
 	double	old_r;
@@ -32,20 +32,21 @@ void	mandelbrot(t_mlx *mlx)
 	while (y < HEIGHT)
 	{
 		x = 0;
-		p_i = (y - HEIGHT / 2) / (0.5 * zoom * HEIGHT);
+		const_i = (y - HEIGHT / 2) / (0.5 * zoom * HEIGHT);
 		while (x < WIDTH)
 		{
-			p_r = 1.5 * (x - WIDTH / 2) / (0.5 * zoom * WIDTH);
+			const_r = 1.5 * (x - WIDTH / 2) / (0.5 * zoom * WIDTH);
 			new_r = 0;
 			new_i = 0;
 			old_r = 0;
 			old_i = 0;
 			i = 0;
-			while ((new_r * new_r + new_i * new_i) < 4.0 && i < 90) {
+			while ((new_r * new_r + new_i * new_i) < 4.0 && i < 80)
+			{
+                new_i = 2.0 * old_r * old_i + const_i;
+                new_r = old_r * old_r - old_i * old_i + const_r;
                 old_r = new_r;
                 old_i = new_i;
-                new_r = old_r * old_r - old_i * old_i + p_r;
-                new_i = 2.0 * old_r * old_i + p_i;
                 ++i;
             }
 			if (i < 100)
