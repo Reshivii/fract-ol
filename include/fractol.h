@@ -6,7 +6,7 @@
 /*   By: aburnott <aburnott@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 10:04:14 by aburnott          #+#    #+#             */
-/*   Updated: 2023/01/14 16:24:31 by aburnott         ###   ########.fr       */
+/*   Updated: 2023/01/16 12:58:31 by aburnott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,15 @@
 # include <stdlib.h>
 # include <stdio.h>
 # include <unistd.h>
-# define WIDTH 1440
-# define HEIGHT 920
+# ifndef WIDTH
+#  define WIDTH 900
+# endif
+# ifndef HEIGHT
+#  define HEIGHT 600
+# endif
+# ifndef MAX_ITERATIONS
+#  define MAX_ITERATIONS 80
+# endif
 //# include "../ft_printf/ft_printf.h"
 
 enum
@@ -85,16 +92,19 @@ typedef struct	s_mlx
 	void	*init;
 	void	*win;
 	void	*img;
-	char *addr;
-	int bits_per_pixel;
-	int line_lenght;
-	int endian;
-	int	x;
-	int	y;
+	char	*img_ptr;
+	char	*addr;
+	int		color;
+	int		*colors;
+	int		bits_per_pixel;
+	int		line_lenght;
+	int		endian;
+	int		x;
+	int		y;
 }	t_mlx;
 
-
-int		create_trgb(int t, int r, int g, int b);
+void	ft_set_colors(t_mlx *f, int color);
+void	ft_color(t_mlx *f, int n);
 void	julia(t_mlx *mlx);
 void	mandelbrot(t_mlx *mlx);
 int		init_mlx(t_mlx *mlx);
