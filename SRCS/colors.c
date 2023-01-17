@@ -6,7 +6,7 @@
 /*   By: aburnott <aburnott@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 11:26:55 by aburnott          #+#    #+#             */
-/*   Updated: 2023/01/16 12:32:24 by aburnott         ###   ########.fr       */
+/*   Updated: 2023/01/17 10:11:25 by aburnott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,10 @@ void	ft_color(t_mlx *f, int n)
 		color = f->color * n;
 	else
 		color = 0x000000;
-	f->img_ptr[f->x * 4 + f->y * WIDTH * 4] = color;
-	f->img_ptr[f->x * 4 + f->y * WIDTH * 4 + 1] = color >> 8;
-	f->img_ptr[f->x * 4 + f->y * WIDTH * 4 + 2] = color >> 16;
-	f->img_ptr[f->x * 4 + f->y * WIDTH * 4 + 3] = color >> 24;
+	f->addr[f->x * 4 + f->y * WIDTH * 4] = color;
+	f->addr[f->x * 4 + f->y * WIDTH * 4 + 1] = color >> 8;
+	f->addr[f->x * 4 + f->y * WIDTH * 4 + 2] = color >> 16;
+	f->addr[f->x * 4 + f->y * WIDTH * 4 + 3] = color >> 24;
 }
 
 void	ft_set_colors(t_mlx *f, int color)

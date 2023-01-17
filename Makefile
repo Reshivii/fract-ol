@@ -6,16 +6,17 @@
 #    By: aburnott <aburnott@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/09 11:09:54 by aburnott          #+#    #+#              #
-#    Updated: 2023/01/12 11:26:06 by aburnott         ###   ########.fr        #
+#    Updated: 2023/01/17 13:41:57 by aburnott         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		= fractol
 
-SRC_FILE	= fractol.c julia.c mandelbrot.c init.c input_management.c utils.c
+SRC_FILE	= fractol.c julia.c mandelbrot.c init.c input_management.c \
+				utils.c colors.c ft_parse.c
 SRCS_DIR	= SRCS
 OBJSDIR		= objs
-INCDIR		= includes ${FT_PRINTF_DIR}/includes ${LIBFT_DIR} srcs/mlx
+INCDIR		= srcs/mlx
 
 SRCS		= $(addprefix ${SRCS_DIR}/, ${SRC_FILE})
 OBJS		= $(addprefix ${OBJSDIR}/, $(addsuffix .o, $(basename ${SRC_FILE})))

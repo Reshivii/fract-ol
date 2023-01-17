@@ -6,7 +6,7 @@
 /*   By: aburnott <aburnott@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 11:36:48 by aburnott          #+#    #+#             */
-/*   Updated: 2023/01/14 17:26:04 by aburnott         ###   ########.fr       */
+/*   Updated: 2023/01/17 13:45:11 by aburnott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,4 +44,5 @@ void	julia(t_mlx *mlx)
 	  	}
 		y++;
 	}
+	mlx_put_image_to_window(mlx->init, mlx->win, mlx->img, 0, 0);
 }

@@ -6,7 +6,7 @@
 /*   By: aburnott <aburnott@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 10:04:14 by aburnott          #+#    #+#             */
-/*   Updated: 2023/01/16 12:58:31 by aburnott         ###   ########.fr       */
+/*   Updated: 2023/01/17 13:43:41 by aburnott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,6 @@ typedef struct	s_mlx
 	void	*init;
 	void	*win;
 	void	*img;
-	char	*img_ptr;
 	char	*addr;
 	int		color;
 	int		*colors;
@@ -113,5 +112,7 @@ int		ft_close(t_mlx *mlx);
 int		key_pressed(int keycode, t_mlx *mlx);
 int		ft_released(int keycode, t_mlx *mlx);
 void	print_error(char *str);
+int		ft_strncmp(const char *s1, const char *s2, size_t n);
+int		ft_parsing(char **av, int ac, t_mlx *mlx);
 
 #endif
