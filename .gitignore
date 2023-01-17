@@ -2,3 +2,5 @@
 fractol
 .DS_Store
 *.a
+mlx_linux
+L_Makefile

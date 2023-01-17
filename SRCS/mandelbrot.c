@@ -6,7 +6,7 @@
 /*   By: aburnott <aburnott@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 13:15:56 by aburnott          #+#    #+#             */
-/*   Updated: 2023/01/17 13:44:59 by aburnott         ###   ########.fr       */
+/*   Updated: 2023/01/17 18:38:49 by aburnott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void	mandelbrot(t_mlx *mlx)
 			old_r = 0;
 			old_i = 0;
 			i = 0;
-			while ((new_r * new_r + new_i * new_i) < 4.0 && i < 80)
+			while ((new_r * new_r + new_i * new_i) < 4 && i < 100)
 			{
                 new_i = 2.0 * old_r * old_i + const_i;
                 new_r = old_r * old_r - old_i * old_i + const_r;
@@ -49,11 +49,7 @@ void	mandelbrot(t_mlx *mlx)
                 old_i = new_i;
                 ++i;
             }
-			if (i < 100)
-				value = i;
-			int color = value * 255 / 100;
-		  	my_mlx_pixel_put(mlx, x, y, color << 2 | color << 4 | color << 8 | color << 12);
-			//ft_color(mlx, 15);
+			ft_color(mlx, i, x, y);
 			x++;
 		}
 		y++;

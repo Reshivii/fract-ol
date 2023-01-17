@@ -6,7 +6,7 @@
 /*   By: aburnott <aburnott@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 10:04:14 by aburnott          #+#    #+#             */
-/*   Updated: 2023/01/17 13:43:41 by aburnott         ###   ########.fr       */
+/*   Updated: 2023/01/17 23:31:37 by aburnott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <stdlib.h>
 # include <stdio.h>
 # include <unistd.h>
+# include <math.h>
 # ifndef WIDTH
 #  define WIDTH 900
 # endif
@@ -87,6 +88,10 @@ enum {
 	ON_DESTROY = 17
 };
 
+typedef struct Color {
+    int r, g, b;
+} Color;
+
 typedef struct	s_mlx
 {
 	void	*init;
@@ -95,15 +100,12 @@ typedef struct	s_mlx
 	char	*addr;
 	int		color;
 	int		*colors;
-	int		bits_per_pixel;
-	int		line_lenght;
-	int		endian;
 	int		x;
 	int		y;
 }	t_mlx;
 
 void	ft_set_colors(t_mlx *f, int color);
-void	ft_color(t_mlx *f, int n);
+void	ft_color(t_mlx *f, int n, int x, int y);
 void	julia(t_mlx *mlx);
 void	mandelbrot(t_mlx *mlx);
 int		init_mlx(t_mlx *mlx);
