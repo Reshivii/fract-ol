@@ -6,7 +6,7 @@
 /*   By: aburnott <aburnott@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 14:53:13 by aburnott          #+#    #+#             */
-/*   Updated: 2023/01/17 18:31:20 by aburnott         ###   ########.fr       */
+/*   Updated: 2023/01/18 13:52:39 by aburnott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,21 +24,18 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 }
 
-// void my_mlx_pixel_put(t_mlx *mlx, int x, int y, int color)
-// {
-// 	char	*dst;
-
-// 	if (x < 0 || y < 0 || x >= WIDTH || y >= HEIGHT)
-// 		return ;
-// 	dst = mlx->addr + (y * mlx->line_lenght + x * (mlx->bits_per_pixel / 8));
-// 	*(unsigned int*)dst = color;
-// }
-
-void	print_error(char *str)
+void	ft_putstr(char *str)
 {
 	int	i;
 
 	i = -1;
 	while (str[++i])
-		write(2, &str[i], 1);
+		write (1, &str[i], 1);
+	write (1, "\n", 1);
+}
+
+double	ft_atof(char *str)
+{
+	(void)str;
+	return (0);
 }

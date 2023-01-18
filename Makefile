@@ -6,14 +6,14 @@
 #    By: aburnott <aburnott@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/09 11:09:54 by aburnott          #+#    #+#              #
-#    Updated: 2023/01/17 13:41:57 by aburnott         ###   ########.fr        #
+#    Updated: 2023/01/18 13:39:08 by aburnott         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		= fractol
 
 SRC_FILE	= fractol.c julia.c mandelbrot.c init.c input_management.c \
-				utils.c colors.c ft_parse.c
+				utils.c colors.c ft_parse.c error.c
 SRCS_DIR	= SRCS
 OBJSDIR		= objs
 INCDIR		= srcs/mlx

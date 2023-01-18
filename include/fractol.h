@@ -6,7 +6,7 @@
 /*   By: aburnott <aburnott@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 10:04:14 by aburnott          #+#    #+#             */
-/*   Updated: 2023/01/17 23:31:37 by aburnott         ###   ########.fr       */
+/*   Updated: 2023/01/18 13:44:20 by aburnott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include "mlx.h"
 # include <stdlib.h>
-# include <stdio.h>
+# include <stdio.h> // TO REMOVE
 # include <unistd.h>
 # include <math.h>
 # ifndef WIDTH
@@ -25,7 +25,7 @@
 #  define HEIGHT 600
 # endif
 # ifndef MAX_ITERATIONS
-#  define MAX_ITERATIONS 80
+#  define MAX_ITERATIONS 100
 # endif
 //# include "../ft_printf/ft_printf.h"
 
@@ -100,8 +100,10 @@ typedef struct	s_mlx
 	char	*addr;
 	int		color;
 	int		*colors;
+	double	zoom;
 	int		x;
 	int		y;
+	int		fractal;
 }	t_mlx;
 
 void	ft_set_colors(t_mlx *f, int color);
@@ -109,12 +111,16 @@ void	ft_color(t_mlx *f, int n, int x, int y);
 void	julia(t_mlx *mlx);
 void	mandelbrot(t_mlx *mlx);
 int		init_mlx(t_mlx *mlx);
-void	my_mlx_pixel_put(t_mlx *mlx, int x, int y, int color);
 int		ft_close(t_mlx *mlx);
 int		key_pressed(int keycode, t_mlx *mlx);
 int		ft_released(int keycode, t_mlx *mlx);
 void	print_error(char *str);
+void	ft_putstr(char *str);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 int		ft_parsing(char **av, int ac, t_mlx *mlx);
+int		mouse_wheel(int keycode, int x, int y, t_mlx *mlx);
+void	dragon_curve(int n, double size, double x, double y, double angle);
+void	display(void);
+double	ft_atof(char *str);
 
 #endif

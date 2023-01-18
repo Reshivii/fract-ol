@@ -1,32 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_parse.c                                         :+:      :+:    :+:   */
+/*   error.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aburnott <aburnott@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/17 13:35:24 by aburnott          #+#    #+#             */
-/*   Updated: 2023/01/18 13:39:56 by aburnott         ###   ########.fr       */
+/*   Created: 2023/01/18 13:30:00 by aburnott          #+#    #+#             */
+/*   Updated: 2023/01/18 14:07:12 by aburnott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/fractol.h"
 
-int	ft_parsing(char **av, int ac, t_mlx *mlx)
+void	print_error(char *str)
 {
-	(void) ac;
-	if (!ft_strncmp(av[1], "mandelbrot", 10))
-		mlx->fractal = 1;
-	else if (!ft_strncmp(av[1], "julia", 5))
-		mlx->fractal = 2;
-	else if (!ft_strncmp(av[1], "dragon", 6))
-		mlx->fractal = 3;
-	else
-	{
-		print_error("Wrong fractal name.\n");
-		ft_putstr("Usage: ./fractol <name> [option1] [option2] ...");
-		display();
-		exit(EXIT_FAILURE);
-	}
-	return (1);
+	int	i;
+
+	i = -1;
+	while (str[++i])
+		write(2, &str[i], 1);
+}
+
+void	display(void)
+{
+	ft_putstr("Name: mandelbrot, julia, dragon");
+	ft_putstr("Option:");
+	ft_putstr("\t- [julia re]: Default: -0.4");
+	ft_putstr("\t- [julia im]: Default: 0.6");
+	ft_putstr("Exemple with option for julia:");
+	ft_putstr("./fractol julia -0.256 0.2659 0x56wa56");
 }

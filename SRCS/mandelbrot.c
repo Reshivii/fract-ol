@@ -6,7 +6,7 @@
 /*   By: aburnott <aburnott@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 13:15:56 by aburnott          #+#    #+#             */
-/*   Updated: 2023/01/17 18:38:49 by aburnott         ###   ########.fr       */
+/*   Updated: 2023/01/18 11:14:31 by aburnott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,19 +23,16 @@ void	mandelbrot(t_mlx *mlx)
 	double	old_r;
 	double	old_i;
 	unsigned int i;
-	int value;
-	double	zoom;
 	
 	y = 0;
-	zoom = 0.8;
-	value = 0;
+	mlx_clear_window(mlx->init, mlx->win);
 	while (y < HEIGHT)
 	{
 		x = 0;
-		const_i = (y - HEIGHT / 2) / (0.5 * zoom * HEIGHT);
+		const_i = (y - HEIGHT / 2) / (0.5 * mlx->zoom * HEIGHT);
 		while (x < WIDTH)
 		{
-			const_r = 1.5 * (x - WIDTH / 2) / (0.5 * zoom * WIDTH);
+			const_r = 1.5 * (x - WIDTH / 2) / (0.5 * mlx->zoom * WIDTH);
 			new_r = 0;
 			new_i = 0;
 			old_r = 0;
