@@ -6,14 +6,14 @@
 /*   By: aburnott <aburnott@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 23:29:08 by aburnott          #+#    #+#             */
-/*   Updated: 2023/01/18 11:26:31 by aburnott         ###   ########.fr       */
+/*   Updated: 2023/01/19 16:26:23 by aburnott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/fractol.h"
 
-void dragon_curve(int n, double size, double x, double y, double angle) {
-
+void dragon_curve(int n, double size, double x, double y, double angle) 
+{
     double x1, y1, x2, y2;
     x1 = x + size * cos(angle);
     y1 = y + size * sin(angle);

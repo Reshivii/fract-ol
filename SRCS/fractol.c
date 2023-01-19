@@ -6,11 +6,23 @@
 /*   By: aburnott <aburnott@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 11:47:24 by aburnott          #+#    #+#             */
-/*   Updated: 2023/01/18 13:26:55 by aburnott         ###   ########.fr       */
+/*   Updated: 2023/01/19 16:27:44 by aburnott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/fractol.h"
+
+int	call_fractal(t_mlx *mlx)
+{
+	if (mlx->fractal == 1)
+		mandelbrot(mlx);
+	else if (mlx->fractal == 2)
+		julia(mlx);
+	else if (mlx->fractal == 3)
+		//call dragon
+		return (0);
+	return (0);
+}
 
 int	main(int ac, char **av)
 {
@@ -20,9 +32,12 @@ int	main(int ac, char **av)
 	
 	if (ac >= 2)
 	{
-		if(!init_mlx(&mlx))
-			exit(EXIT_FAILURE);	
 		ft_parsing(av, ac, &mlx);
+		if(!init_mlx(&mlx))
+			exit(EXIT_FAILURE);
+		if (mlx.fractal == 2)
+			init_fractal(av, ac, &mlx);
+		call_fractal(&mlx);
 		mlx_hook(mlx.win, ON_DESTROY, 0, ft_close, &mlx);
 		mlx_hook(mlx.win, ON_KEYDOWN, 0, key_pressed, &mlx);
 		mlx_hook(mlx.win, ON_KEYUP, 0, ft_released, &mlx);

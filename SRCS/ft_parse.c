@@ -6,7 +6,7 @@
 /*   By: aburnott <aburnott@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 13:35:24 by aburnott          #+#    #+#             */
-/*   Updated: 2023/01/18 13:39:56 by aburnott         ###   ########.fr       */
+/*   Updated: 2023/01/19 11:42:55 by aburnott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	ft_parsing(char **av, int ac, t_mlx *mlx)
 	{
 		print_error("Wrong fractal name.\n");
 		ft_putstr("Usage: ./fractol <name> [option1] [option2] ...");
-		display();
+		display_option();
 		exit(EXIT_FAILURE);
 	}
 	return (1);

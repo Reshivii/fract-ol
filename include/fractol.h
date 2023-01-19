@@ -6,7 +6,7 @@
 /*   By: aburnott <aburnott@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 10:04:14 by aburnott          #+#    #+#             */
-/*   Updated: 2023/01/18 15:41:57 by aburnott         ###   ########.fr       */
+/*   Updated: 2023/01/19 16:29:58 by aburnott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,12 +104,16 @@ typedef struct	s_mlx
 	int		x;
 	int		y;
 	int		fractal;
+	double	c_re;
+	double	c_im;
+	int		psyche;
 }	t_mlx;
 
 void	ft_set_colors(t_mlx *f, int color);
 void	ft_color(t_mlx *f, int n, int x, int y);
 void	julia(t_mlx *mlx);
 void	mandelbrot(t_mlx *mlx);
+int		call_fractal(t_mlx *mlx);
 int		init_mlx(t_mlx *mlx);
 int		ft_close(t_mlx *mlx);
 int		key_pressed(int keycode, t_mlx *mlx);
@@ -120,7 +124,8 @@ int		ft_strncmp(const char *s1, const char *s2, size_t n);
 int		ft_parsing(char **av, int ac, t_mlx *mlx);
 int		mouse_wheel(int keycode, int x, int y, t_mlx *mlx);
 void	dragon_curve(int n, double size, double x, double y, double angle);
-void	display(void);
-double	ft_atof(char *str);
+void	display_option(void);
+float	ft_atof(char *arr);
+int		init_fractal(char **av, int ac, t_mlx *mlx);
 
 #endif

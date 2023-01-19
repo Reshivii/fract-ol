@@ -6,7 +6,7 @@
 /*   By: aburnott <aburnott@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 14:53:13 by aburnott          #+#    #+#             */
-/*   Updated: 2023/01/18 13:52:39 by aburnott         ###   ########.fr       */
+/*   Updated: 2023/01/19 11:40:58 by aburnott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,29 @@ void	ft_putstr(char *str)
 	write (1, "\n", 1);
 }
 
-double	ft_atof(char *str)
+float ft_atof(char *arr)
 {
-	(void)str;
-	return (0);
+  float val = 0;
+  int afterdot=0;
+  float scale=1;
+  int neg = 0; 
+
+  if (*arr == '-') {
+    arr++;
+    neg = 1;
+  }
+  while (*arr) {
+    if (afterdot) {
+      scale = scale/10;
+      val = val + (*arr-'0')*scale;
+    } else {
+      if (*arr == '.') 
+    afterdot++;
+      else
+    val = val * 10.0 + (*arr - '0');
+    }
+    arr++;
+  }
+  if(neg) return -val;
+  else    return  val;
 }

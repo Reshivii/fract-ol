@@ -6,7 +6,7 @@
 /*   By: aburnott <aburnott@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 14:56:34 by aburnott          #+#    #+#             */
-/*   Updated: 2023/01/18 14:04:37 by aburnott         ###   ########.fr       */
+/*   Updated: 2023/01/19 16:31:16 by aburnott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,18 +32,23 @@ int	init_mlx(t_mlx *mlx)
 		return (0);
 	ft_set_colors(mlx, mlx->color);
 	mlx->zoom = 0.8;
+	mlx->psyche = 0;
 	return (1);
 }
 
-int	init_fractal(char **av, t_mlx *mlx)
+int	init_fractal(char **av, int ac, t_mlx *mlx)
 {
-	(void)mlx;
-	if (av[2])
+	if (ac == 4)
 	{
-		if (mlx->fractal == 2)
-			ft_atof(av[2]);
+		if (av[2])
+			mlx->c_re = ft_atof(av[2]);
+		if (av[3])
+			mlx->c_im = ft_atof(av[3]);		
 	}
-	if (av[3])
-		ft_atof(av[3]);
+	else
+	{
+		mlx->c_re = -0.4;
+		mlx->c_im = 0.6;
+	}
 	return (0);
 }

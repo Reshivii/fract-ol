@@ -6,7 +6,7 @@
 /*   By: aburnott <aburnott@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 13:30:00 by aburnott          #+#    #+#             */
-/*   Updated: 2023/01/18 14:07:12 by aburnott         ###   ########.fr       */
+/*   Updated: 2023/01/19 11:18:52 by aburnott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,12 @@ void	print_error(char *str)
 		write(2, &str[i], 1);
 }
 
-void	display(void)
+void	display_option(void)
 {
 	ft_putstr("Name: mandelbrot, julia, dragon");
 	ft_putstr("Option:");
 	ft_putstr("\t- [julia re]: Default: -0.4");
 	ft_putstr("\t- [julia im]: Default: 0.6");
 	ft_putstr("Exemple with option for julia:");
-	ft_putstr("./fractol julia -0.256 0.2659 0x56wa56");
+	ft_putstr("./fractol julia -0.256 0.2659");
 }
