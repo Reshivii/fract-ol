@@ -6,14 +6,14 @@
 #    By: aburnott <aburnott@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/09 11:09:54 by aburnott          #+#    #+#              #
-#    Updated: 2023/01/18 13:39:08 by aburnott         ###   ########.fr        #
+#    Updated: 2023/01/20 12:07:50 by aburnott         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		= fractol
 
 SRC_FILE	= fractol.c julia.c mandelbrot.c init.c input_management.c \
-				utils.c colors.c ft_parse.c error.c
+				utils.c colors.c ft_parse.c error.c dragon.c
 SRCS_DIR	= SRCS
 OBJSDIR		= objs
 INCDIR		= srcs/mlx
@@ -27,7 +27,7 @@ CFLAGS		= -Wall -Wextra -Werror -O1 -fsanitize=address -g
 INCS		= $(foreach d, $(INCDIR), -I$d)
 
 # Minilibx
-MLX_DIR		= srcs/mlx
+MLX_DIR		= mlx
 MLX_PATH	= ${MLX_DIR}/libmlx.a
 MLX			= -framework OpenGL -framework AppKit ${MLX_PATH}
 

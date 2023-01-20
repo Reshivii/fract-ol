@@ -6,7 +6,7 @@
 /*   By: aburnott <aburnott@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 10:04:14 by aburnott          #+#    #+#             */
-/*   Updated: 2023/01/19 16:29:58 by aburnott         ###   ########.fr       */
+/*   Updated: 2023/01/20 10:48:26 by aburnott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,7 @@ enum
 	KEY_RIGHT = 124,
 	KEY_DOWN = 125,
 	KEY_LEFT = 123,
+	KEY_SPACE = 49,
 	KEY_0 = 82,
 	KEY_1 = 83,
 	KEY_2 = 84,
@@ -123,7 +124,7 @@ void	ft_putstr(char *str);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 int		ft_parsing(char **av, int ac, t_mlx *mlx);
 int		mouse_wheel(int keycode, int x, int y, t_mlx *mlx);
-void	dragon_curve(int n, double size, double x, double y, double angle);
+void	dragon_curve(int n, double size, double x, double y, double angle, t_mlx *mlx);
 void	display_option(void);
 float	ft_atof(char *arr);
 int		init_fractal(char **av, int ac, t_mlx *mlx);

@@ -6,7 +6,7 @@
 /*   By: aburnott <aburnott@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 11:21:42 by aburnott          #+#    #+#             */
-/*   Updated: 2023/01/19 16:35:55 by aburnott         ###   ########.fr       */
+/*   Updated: 2023/01/20 12:17:32 by aburnott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,11 @@ int	key_pressed(int keycode, t_mlx *mlx)
 		else
 		mlx->psyche = 1;
 	}
-	
+	if (keycode == KEY_SPACE)
+	{
+		mlx->zoom = 0.8;
+		call_fractal(mlx);
+	}
 	return (0);
 }
 
@@ -46,6 +50,8 @@ int	ft_released(int keycode, t_mlx *mlx)
 
 int	mouse_wheel(int keycode, int x, int y, t_mlx *mlx)
 {
+	int	zoom;
+
 	(void)x;
 	(void)y;
 	if (keycode == ON_MOUSEUP)
@@ -53,8 +59,11 @@ int	mouse_wheel(int keycode, int x, int y, t_mlx *mlx)
 	else if (keycode == ON_MOUSEDOWN)
 	{
 		if (mlx->zoom > 0.8)
-			if((mlx->zoom -= 1.0) < 0.8)
+		{
+			zoom = (mlx->zoom -= 1);
+			if (zoom < 0.8)
 				mlx->zoom = 0.8;
+		}
 	}
 	if (mlx->psyche == 1)
 		mlx->color += 500;

@@ -6,38 +6,51 @@
 /*   By: aburnott <aburnott@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 11:36:48 by aburnott          #+#    #+#             */
-/*   Updated: 2023/01/19 11:43:40 by aburnott         ###   ########.fr       */
+/*   Updated: 2023/01/20 10:52:28 by aburnott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/fractol.h"
 
+static int	ft_iteration(double z_re, double z_im, t_mlx *mlx)
+{
+	int		iteration;
+	double	new_re;
+	double	new_im;
+
+	iteration = 0;
+	while (z_re * z_re + z_im * z_im < 4 && iteration < 100)
+	{
+		new_re = z_re * z_re - z_im * z_im + mlx->c_re;
+		new_im = 2 * z_re * z_im + mlx->c_im;
+		z_re = new_re;
+		z_im = new_im;
+		iteration++;
+	}
+	return (iteration);
+}
+
 void	julia(t_mlx *mlx)
 {
-	int y;
-	int	x;
+	int		y;
+	int		x;
+	double	z_re;
+	double	z_im;
+	int		iteration;
 
 	y = 0;
 	mlx_clear_window(mlx->init, mlx->win);
-	while (y < HEIGHT) {
+	while (y < HEIGHT)
+	{
 		x = 0;
-	  	while (x < WIDTH) {
-	  	//   double c_re = -0.4;
-	  	//   double c_im = 0.6;
-		  //double zoom = 0.8;
-	  	  double z_re = 1.5 * (x - WIDTH / 2) / (0.5 * mlx->zoom * WIDTH);
-	  	  double z_im = (y - HEIGHT / 2) / (0.5 * mlx->zoom * HEIGHT);
-	  	  int iteration = 0;
-	  	  while (z_re * z_re + z_im * z_im < 4 && iteration < 100) {
-	  	    double new_re = z_re * z_re - z_im * z_im + mlx->c_re;
-	  	    double new_im = 2 * z_re * z_im + mlx->c_im;
-	  	    z_re = new_re;
-	  	    z_im = new_im;
-	  	    iteration++;
-	  	  }
-		  ft_color(mlx, iteration, x, y);
-		  x++;
-	  	}
+		while (x < WIDTH)
+		{
+			z_re = 1.5 * (x - WIDTH / 2) / (0.5 * mlx->zoom * WIDTH);
+			z_im = (y - HEIGHT / 2) / (0.5 * mlx->zoom * HEIGHT);
+			iteration = ft_iteration(z_re, z_im, mlx);
+			ft_color(mlx, iteration, x, y);
+			x++;
+		}
 		y++;
 	}
 	mlx_put_image_to_window(mlx->init, mlx->win, mlx->img, 0, 0);

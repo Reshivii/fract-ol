@@ -6,7 +6,7 @@
 /*   By: aburnott <aburnott@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 11:47:24 by aburnott          #+#    #+#             */
-/*   Updated: 2023/01/19 16:27:44 by aburnott         ###   ########.fr       */
+/*   Updated: 2023/01/20 12:11:20 by aburnott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,21 +19,18 @@ int	call_fractal(t_mlx *mlx)
 	else if (mlx->fractal == 2)
 		julia(mlx);
 	else if (mlx->fractal == 3)
-		//call dragon
-		return (0);
+		dragon_curve(80, 5, 100, 100, 4, mlx);
 	return (0);
 }
 
 int	main(int ac, char **av)
 {
 	t_mlx	mlx;
-	(void) ac;
-	(void) **av;
-	
+
 	if (ac >= 2)
 	{
 		ft_parsing(av, ac, &mlx);
-		if(!init_mlx(&mlx))
+		if (!init_mlx(&mlx))
 			exit(EXIT_FAILURE);
 		if (mlx.fractal == 2)
 			init_fractal(av, ac, &mlx);
@@ -42,8 +39,7 @@ int	main(int ac, char **av)
 		mlx_hook(mlx.win, ON_KEYDOWN, 0, key_pressed, &mlx);
 		mlx_hook(mlx.win, ON_KEYUP, 0, ft_released, &mlx);
 		mlx_mouse_hook(mlx.win, mouse_wheel, &mlx);
-		//mandelbrot(&mlx);
-		//mlx_put_image_to_window(mlx.init, mlx.win, mlx.img, 0, 0);
+		mlx_put_image_to_window(mlx.init, mlx.win, mlx.img, 0, 0);
 		mlx_loop(mlx.init);
 	}
 	print_error("Error. Missing arguments.\n");
