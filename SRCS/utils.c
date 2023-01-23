@@ -6,7 +6,7 @@
 /*   By: aburnott <aburnott@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 14:53:13 by aburnott          #+#    #+#             */
-/*   Updated: 2023/01/20 12:10:53 by aburnott         ###   ########.fr       */
+/*   Updated: 2023/01/20 15:07:18 by aburnott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,27 +36,41 @@ void	ft_putstr(char *str)
 
 float	ft_atof(char *arr)
 {
-	float val = 0;
-	int afterdot=0;
-	float scale=1;
-	int neg = 0;
-	
-	if (*arr == '-') {
-	  arr++;
-	  neg = 1;
+	float	val;
+	int		afterdot;
+	float	scale;
+	int		neg;
+
+	val = 0;
+	afterdot = 0;
+	scale = 1;
+	neg = 0;
+	while (*arr >= 9 && *arr <= 13 || *arr == ' ')
+		arr++; 
+	while (*arr == '-' || *arr == '+')
+	{
+		arr++;
+		if (*arr == '-')
+			neg = 1;
 	}
-	while (*arr) {
-	  if (afterdot) {
-	    scale = scale/10;
-	    val = val + (*arr-'0')*scale;
-	  } else {
-	    if (*arr == '.') 
-	  afterdot++;
-	    else
-	  val = val * 10.0 + (*arr - '0');
-	  }
-	  arr++;
+	while (*arr)
+	{
+		if (afterdot)
+		{
+			scale = scale / 10;
+			val = val + (*arr - '0') * scale;
+		}
+		else
+		{
+			if (*arr == '.')
+				afterdot++;
+			else
+				val = val * 10.0 + (*arr - '0');
+		}
+		arr++;
 	}
-	if(neg) return -val;
-	else    return  val;
+	if (neg)
+		return (-val);
+	else
+		return (val);
 }

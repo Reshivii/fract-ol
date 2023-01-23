@@ -6,7 +6,7 @@
 /*   By: aburnott <aburnott@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 11:47:24 by aburnott          #+#    #+#             */
-/*   Updated: 2023/01/20 12:11:20 by aburnott         ###   ########.fr       */
+/*   Updated: 2023/01/21 14:31:54 by aburnott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	call_fractal(t_mlx *mlx)
 	else if (mlx->fractal == 2)
 		julia(mlx);
 	else if (mlx->fractal == 3)
-		dragon_curve(80, 5, 100, 100, 4, mlx);
+		draw_burning(mlx);
 	return (0);
 }
 

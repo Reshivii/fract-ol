@@ -6,7 +6,7 @@
 /*   By: aburnott <aburnott@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 13:35:24 by aburnott          #+#    #+#             */
-/*   Updated: 2023/01/20 12:11:39 by aburnott         ###   ########.fr       */
+/*   Updated: 2023/01/21 14:31:04 by aburnott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	ft_parsing(char **av, int ac, t_mlx *mlx)
 		mlx->fractal = 1;
 	else if (!ft_strncmp(av[1], "julia", 5))
 		mlx->fractal = 2;
-	else if (!ft_strncmp(av[1], "dragon", 6))
+	else if (!ft_strncmp(av[1], "burning", 6))
 		mlx->fractal = 3;
 	else
 	{

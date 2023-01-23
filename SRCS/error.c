@@ -6,7 +6,7 @@
 /*   By: aburnott <aburnott@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 13:30:00 by aburnott          #+#    #+#             */
-/*   Updated: 2023/01/20 12:09:15 by aburnott         ###   ########.fr       */
+/*   Updated: 2023/01/23 01:42:05 by aburnott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	print_error(char *str)
 
 void	display_option(void)
 {
-	ft_putstr("Name: mandelbrot, julia, dragon");
+	ft_putstr("Name: mandelbrot, julia, burning");
 	ft_putstr("Option:");
 	ft_putstr("\t- [julia re]: Default: -0.4");
 	ft_putstr("\t- [julia im]: Default: 0.6");
