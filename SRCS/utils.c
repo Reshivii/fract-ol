@@ -6,7 +6,7 @@
 /*   By: aburnott <aburnott@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 14:53:13 by aburnott          #+#    #+#             */
-/*   Updated: 2023/01/20 15:07:18 by aburnott         ###   ########.fr       */
+/*   Updated: 2023/01/23 11:48:24 by aburnott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ float	ft_atof(char *arr)
 	afterdot = 0;
 	scale = 1;
 	neg = 0;
-	while (*arr >= 9 && *arr <= 13 || *arr == ' ')
+	while ((*arr >= 9 && *arr <= 13) || *arr == ' ')
 		arr++; 
 	while (*arr == '-' || *arr == '+')
 	{

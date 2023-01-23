@@ -6,11 +6,26 @@
 /*   By: aburnott <aburnott@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 14:56:34 by aburnott          #+#    #+#             */
-/*   Updated: 2023/01/23 01:48:26 by aburnott         ###   ########.fr       */
+/*   Updated: 2023/01/23 14:13:25 by aburnott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/fractol.h"
+
+int	init_colors(t_mlx *mlx)
+{
+	if (mlx->fractal == 3)
+		mlx->color = 0xff4000;
+	else
+		mlx->color = 0x430070;
+	mlx->colors = (int *)malloc(sizeof(int) * MAX_ITERATIONS + 1);
+	if (!mlx->color)
+		return (0);
+	ft_set_colors(mlx, mlx->color);
+	mlx->zoom = 0.8;
+	mlx->psyche = 0;
+	return (1);
+}
 
 int	init_mlx(t_mlx *mlx)
 {	
@@ -25,16 +40,11 @@ int	init_mlx(t_mlx *mlx)
 	if (!mlx->win)
 		return (0);
 	mlx->img = mlx_new_image(mlx->init, WIDTH, HEIGHT);
+	if (!mlx->img)
+		return (0);
 	mlx->addr = mlx_get_data_addr(mlx->img, &bits_per_pixel, &line_lenght,
 			&endian);
-	mlx->color = 0x430070;
-	mlx->colors = (int *)malloc(sizeof(int) * MAX_ITERATIONS + 1);
-	if (!mlx->color)
-		return (0);
-	ft_set_colors(mlx, mlx->color);
-	mlx->zoom = 0.8;
-	mlx->psyche = 0;
-	return (1);
+	return (init_colors(mlx));
 }
 
 int	init_fractal(char **av, int ac, t_mlx *mlx)

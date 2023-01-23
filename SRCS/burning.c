@@ -6,7 +6,7 @@
 /*   By: aburnott <aburnott@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/21 14:25:37 by aburnott          #+#    #+#             */
-/*   Updated: 2023/01/23 01:52:08 by aburnott         ###   ########.fr       */
+/*   Updated: 2023/01/23 12:12:35 by aburnott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,10 +49,10 @@ void	draw_burning(t_mlx *mlx)
 	while (y < HEIGHT)
 	{
 		x = 0;
-		const_i = (y - HEIGHT / 2) / (0.5 * mlx->zoom * HEIGHT);
+		const_i = (y - HEIGHT / 2) / (0.3 * mlx->zoom * HEIGHT);
 		while (x < WIDTH)
 		{
-			const_r = 1.5 * (x - WIDTH / 2) / (0.5 * mlx->zoom * WIDTH);
+			const_r = 1.5 * (x - WIDTH / 2) / (0.3 * mlx->zoom * WIDTH);
 			i = ft_iteration(const_i, const_r);
 			ft_color(mlx, i, x, y);
 			x++;
