@@ -6,7 +6,7 @@
 /*   By: aburnott <aburnott@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 14:53:13 by aburnott          #+#    #+#             */
-/*   Updated: 2023/01/23 11:48:24 by aburnott         ###   ########.fr       */
+/*   Updated: 2023/01/23 15:41:35 by aburnott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	ft_putstr(char *str)
 	write (1, "\n", 1);
 }
 
-float	ft_atof(char *arr)
+float	ft_atof(char *arr, int *check)
 {
 	float	val;
 	int		afterdot;
@@ -55,19 +55,27 @@ float	ft_atof(char *arr)
 	}
 	while (*arr)
 	{
-		if (afterdot)
+		if ((*arr >= '0' && *arr <= '9') || *arr == '.')
 		{
-			scale = scale / 10;
-			val = val + (*arr - '0') * scale;
+			if (afterdot)
+			{
+				scale = scale / 10;
+				val = val + (*arr - '0') * scale;
+			}
+			else
+			{
+				if (*arr == '.')
+					afterdot++;
+				else
+					val = val * 10.0 + (*arr - '0');
+			}
+			arr++;
 		}
 		else
 		{
-			if (*arr == '.')
-				afterdot++;
-			else
-				val = val * 10.0 + (*arr - '0');
+			*check = 1;
+			return (0);
 		}
-		arr++;
 	}
 	if (neg)
 		return (-val);

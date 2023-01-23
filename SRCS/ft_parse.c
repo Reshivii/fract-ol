@@ -6,7 +6,7 @@
 /*   By: aburnott <aburnott@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 13:35:24 by aburnott          #+#    #+#             */
-/*   Updated: 2023/01/23 14:13:49 by aburnott         ###   ########.fr       */
+/*   Updated: 2023/01/23 15:46:13 by aburnott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@ int	ft_parsing(char **av, int ac, t_mlx *mlx)
 	else if (!ft_strncmp(av[1], "julia", 5))
 	{
 		mlx->fractal = 2;
-		if (ac == 3)
+		if (ac == 3 || ac > 4)
 		{
-			print_error("Too few arguments.\n");
+			print_error("Error with number of arguments.\n");
 			display_option();
 			exit(EXIT_FAILURE);
 		}

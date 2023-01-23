@@ -6,7 +6,7 @@
 /*   By: aburnott <aburnott@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 14:56:34 by aburnott          #+#    #+#             */
-/*   Updated: 2023/01/23 14:13:25 by aburnott         ###   ########.fr       */
+/*   Updated: 2023/01/23 15:40:26 by aburnott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,12 +49,21 @@ int	init_mlx(t_mlx *mlx)
 
 int	init_fractal(char **av, int ac, t_mlx *mlx)
 {
+	int	check;
+
+	check = 0;
 	if (ac == 4)
 	{
 		if (av[2])
-			mlx->c_re = ft_atof(av[2]);
+			mlx->c_re = ft_atof(av[2], &check);
 		if (av[3])
-			mlx->c_im = ft_atof(av[3]);
+			mlx->c_im = ft_atof(av[3], &check);
+		if (check == 1)
+		{
+			print_error("Invalid option.\n");
+			display_option();
+			exit(EXIT_FAILURE);
+		}
 	}
 	else
 	{

@@ -6,7 +6,7 @@
 /*   By: aburnott <aburnott@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 11:47:24 by aburnott          #+#    #+#             */
-/*   Updated: 2023/01/21 14:31:54 by aburnott         ###   ########.fr       */
+/*   Updated: 2023/01/23 15:47:34 by aburnott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ int	main(int ac, char **av)
 		mlx_put_image_to_window(mlx.init, mlx.win, mlx.img, 0, 0);
 		mlx_loop(mlx.init);
 	}
-	print_error("Error. Missing arguments.\n");
+	else
+		print_error("Error. Missing arguments.\n");
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: aburnott <aburnott@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 10:04:14 by aburnott          #+#    #+#             */
-/*   Updated: 2023/01/23 01:55:41 by aburnott         ###   ########.fr       */
+/*   Updated: 2023/01/23 15:40:55 by aburnott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,7 +120,7 @@ int		ft_parsing(char **av, int ac, t_mlx *mlx);
 int		mouse_wheel(int keycode, int x, int y, t_mlx *mlx);
 void	draw_burning(t_mlx *mlx);
 void	display_option(void);
-float	ft_atof(char *arr);
+float	ft_atof(char *arr, int *check);
 int		init_fractal(char **av, int ac, t_mlx *mlx);
 
 #endif
