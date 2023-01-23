@@ -6,7 +6,7 @@
 /*   By: aburnott <aburnott@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 14:53:13 by aburnott          #+#    #+#             */
-/*   Updated: 2023/01/23 15:41:35 by aburnott         ###   ########.fr       */
+/*   Updated: 2023/01/23 16:19:05 by aburnott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,25 +34,11 @@ void	ft_putstr(char *str)
 	write (1, "\n", 1);
 }
 
-float	ft_atof(char *arr, int *check)
+float	next_atof(char *arr, int *check, float scale, int afterdot)
 {
 	float	val;
-	int		afterdot;
-	float	scale;
-	int		neg;
 
 	val = 0;
-	afterdot = 0;
-	scale = 1;
-	neg = 0;
-	while ((*arr >= 9 && *arr <= 13) || *arr == ' ')
-		arr++; 
-	while (*arr == '-' || *arr == '+')
-	{
-		arr++;
-		if (*arr == '-')
-			neg = 1;
-	}
 	while (*arr)
 	{
 		if ((*arr >= '0' && *arr <= '9') || *arr == '.')
@@ -72,11 +58,29 @@ float	ft_atof(char *arr, int *check)
 			arr++;
 		}
 		else
-		{
 			*check = 1;
-			return (0);
-		}
 	}
+	return (val);
+}
+
+float	ft_atof(char *arr, int *check)
+{
+	float	val;
+	int		afterdot;
+	int		neg;
+
+	val = 0;
+	afterdot = 0;
+	neg = 0;
+	while (*arr == '-' || *arr == '+')
+	{
+		if (*arr == '-')
+			neg = 1;
+		arr++;
+	}
+	if (!*arr)
+		*check = 1;
+	val = next_atof(arr, check, 1, 0);
 	if (neg)
 		return (-val);
 	else

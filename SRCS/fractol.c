@@ -6,7 +6,7 @@
 /*   By: aburnott <aburnott@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 11:47:24 by aburnott          #+#    #+#             */
-/*   Updated: 2023/01/23 15:47:34 by aburnott         ###   ########.fr       */
+/*   Updated: 2023/01/23 16:03:55 by aburnott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,10 @@ int	main(int ac, char **av)
 	if (ac >= 2)
 	{
 		ft_parsing(av, ac, &mlx);
-		if (!init_mlx(&mlx))
-			exit(EXIT_FAILURE);
 		if (mlx.fractal == 2)
 			init_fractal(av, ac, &mlx);
+		if (!init_mlx(&mlx))
+			exit(EXIT_FAILURE);
 		call_fractal(&mlx);
 		mlx_hook(mlx.win, ON_DESTROY, 0, ft_close, &mlx);
 		mlx_hook(mlx.win, ON_KEYDOWN, 0, key_pressed, &mlx);
