@@ -6,7 +6,7 @@
 /*   By: aburnott <aburnott@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 10:04:14 by aburnott          #+#    #+#             */
-/*   Updated: 2023/01/21 14:31:33 by aburnott         ###   ########.fr       */
+/*   Updated: 2023/01/23 01:55:41 by aburnott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 # include "mlx.h"
 # include <stdlib.h>
-# include <stdio.h> // TO REMOVE
 # include <unistd.h>
 # include <math.h>
 # ifndef WIDTH
@@ -27,7 +26,6 @@
 # ifndef MAX_ITERATIONS
 #  define MAX_ITERATIONS 100
 # endif
-//# include "../ft_printf/ft_printf.h"
 
 enum
 {
@@ -89,11 +87,7 @@ enum {
 	ON_DESTROY = 17
 };
 
-typedef struct Color {
-    int r, g, b;
-} Color;
-
-typedef struct	s_mlx
+typedef struct s_mlx
 {
 	void	*init;
 	void	*win;
