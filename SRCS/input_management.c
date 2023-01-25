@@ -6,7 +6,7 @@
 /*   By: aburnott <aburnott@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 11:21:42 by aburnott          #+#    #+#             */
-/*   Updated: 2023/01/20 12:52:29 by aburnott         ###   ########.fr       */
+/*   Updated: 2023/01/25 13:47:06 by aburnott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ int	ft_close(t_mlx *mlx)
 		mlx_destroy_window(mlx->init, mlx->win);
 	if (mlx->img)
 		mlx_destroy_image(mlx->init, mlx->img);
+	free(mlx->colors);
 	exit(EXIT_SUCCESS);
 	return (0);
 }

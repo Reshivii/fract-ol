@@ -6,7 +6,7 @@
 /*   By: aburnott <aburnott@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 11:47:24 by aburnott          #+#    #+#             */
-/*   Updated: 2023/01/23 16:03:55 by aburnott         ###   ########.fr       */
+/*   Updated: 2023/01/25 13:48:51 by aburnott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,9 @@ int	main(int ac, char **av)
 		mlx_loop(mlx.init);
 	}
 	else
+	{
 		print_error("Error. Missing arguments.\n");
+		display_option();
+	}
 	return (0);
 }

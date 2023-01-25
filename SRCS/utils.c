@@ -6,7 +6,7 @@
 /*   By: aburnott <aburnott@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 14:53:13 by aburnott          #+#    #+#             */
-/*   Updated: 2023/01/23 16:19:05 by aburnott         ###   ########.fr       */
+/*   Updated: 2023/01/25 13:53:16 by aburnott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ float	next_atof(char *arr, int *check, float scale, int afterdot)
 			arr++;
 		}
 		else
-			*check = 1;
+			return (*check = 1);
 	}
 	return (val);
 }
@@ -72,7 +72,7 @@ float	ft_atof(char *arr, int *check)
 	val = 0;
 	afterdot = 0;
 	neg = 0;
-	while (*arr == '-' || *arr == '+')
+	if (*arr == '-' || *arr == '+')
 	{
 		if (*arr == '-')
 			neg = 1;
