@@ -6,7 +6,7 @@
 /*   By: aburnott <aburnott@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/21 14:25:37 by aburnott          #+#    #+#             */
-/*   Updated: 2023/01/26 10:14:11 by aburnott         ###   ########.fr       */
+/*   Updated: 2023/01/26 10:31:08 by aburnott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,24 @@
 
 static int	ft_iteration(double const_i, double const_r)
 {
-	double	z_real_new;
-	double	z_imag_new;
+	double	z_real_n;
+	double	z_imag_n;
 	double	z_real;
 	double	z_imag;
 	int		i;
 
-	z_real_new = 0;
-	z_imag_new = 0;
+	z_real_n = 0;
+	z_imag_n = 0;
 	z_real = 0;
 	z_imag = 0;
 	i = 0;
-	while ((z_real_new * z_real_new + z_imag_new * z_imag_new) < 4 && i < MAX_ITERATIONS)
+	while ((z_real_n * z_real_n + z_imag_n * z_imag_n) < 4
+		&& i < MAX_ITERATIONS)
 	{
-		z_real_new = z_real * z_real - z_imag * z_imag + const_i;
-		z_imag_new = 2 * fabs(z_real * z_imag) + const_r;
-		z_real = z_real_new;
-		z_imag = z_imag_new;
+		z_real_n = z_real * z_real - z_imag * z_imag + const_i;
+		z_imag_n = 2 * fabs(z_real * z_imag) + const_r;
+		z_real = z_real_n;
+		z_imag = z_imag_n;
 		++i;
 	}
 	return (i);

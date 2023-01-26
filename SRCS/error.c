@@ -6,7 +6,7 @@
 /*   By: aburnott <aburnott@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 13:30:00 by aburnott          #+#    #+#             */
-/*   Updated: 2023/01/23 01:42:05 by aburnott         ###   ########.fr       */
+/*   Updated: 2023/01/26 10:31:17 by aburnott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,4 +29,14 @@ void	display_option(void)
 	ft_putstr("\t- [julia im]: Default: 0.6");
 	ft_putstr("Exemple with option for julia:");
 	ft_putstr("./fractol julia -0.256 0.2659");
+}
+
+void	display_command(void)
+{
+	ft_putstr("==== Available Commands ====");
+	ft_putstr("Use mouse wheel to zoom.\n");
+	ft_putstr("==== Control ====");
+	ft_putstr(" - Space to reset the fractal.");
+	ft_putstr(" - P to run psychedelique mode.");
+	ft_putstr(" - Escape or Cross to exit.");
 }
