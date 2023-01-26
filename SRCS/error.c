@@ -6,7 +6,7 @@
 /*   By: aburnott <aburnott@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 13:30:00 by aburnott          #+#    #+#             */
-/*   Updated: 2023/01/26 10:31:17 by aburnott         ###   ########.fr       */
+/*   Updated: 2023/01/26 10:35:01 by aburnott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,9 @@ void	display_option(void)
 	ft_putstr("\t- [julia re]: Default: -0.4");
 	ft_putstr("\t- [julia im]: Default: 0.6");
 	ft_putstr("Exemple with option for julia:");
-	ft_putstr("./fractol julia -0.256 0.2659");
+	ft_putstr("./fractol julia -0.285 0.01");
+	ft_putstr("./fractol julia 0.3 0.5");
+	ft_putstr("./fractol julia -0.8 0.156");
 }
 
 void	display_command(void)

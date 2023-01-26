@@ -6,7 +6,7 @@
 /*   By: aburnott <aburnott@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 11:21:42 by aburnott          #+#    #+#             */
-/*   Updated: 2023/01/25 13:47:06 by aburnott         ###   ########.fr       */
+/*   Updated: 2023/01/26 10:38:23 by aburnott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,10 @@ int	key_pressed(int keycode, t_mlx *mlx)
 	if (keycode == KEY_SPACE)
 	{
 		mlx->zoom = 0.8;
-		mlx->color = 0x430070;
+		if (mlx->fractal == 3)
+			mlx->color = 0xff4000;
+		else
+			mlx->color = 0x430070;
 		call_fractal(mlx);
 	}
 	return (0);
