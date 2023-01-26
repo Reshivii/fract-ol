@@ -6,7 +6,7 @@
 /*   By: aburnott <aburnott@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 11:36:48 by aburnott          #+#    #+#             */
-/*   Updated: 2023/01/20 10:52:28 by aburnott         ###   ########.fr       */
+/*   Updated: 2023/01/26 10:14:04 by aburnott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static int	ft_iteration(double z_re, double z_im, t_mlx *mlx)
 	double	new_im;
 
 	iteration = 0;
-	while (z_re * z_re + z_im * z_im < 4 && iteration < 100)
+	while (z_re * z_re + z_im * z_im < 4 && iteration < MAX_ITERATIONS)
 	{
 		new_re = z_re * z_re - z_im * z_im + mlx->c_re;
 		new_im = 2 * z_re * z_im + mlx->c_im;

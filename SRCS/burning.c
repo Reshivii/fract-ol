@@ -6,7 +6,7 @@
 /*   By: aburnott <aburnott@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/21 14:25:37 by aburnott          #+#    #+#             */
-/*   Updated: 2023/01/23 12:12:35 by aburnott         ###   ########.fr       */
+/*   Updated: 2023/01/26 10:14:11 by aburnott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static int	ft_iteration(double const_i, double const_r)
 	z_real = 0;
 	z_imag = 0;
 	i = 0;
-	while ((z_real_new * z_real_new + z_imag_new * z_imag_new) < 4 && i < 100)
+	while ((z_real_new * z_real_new + z_imag_new * z_imag_new) < 4 && i < MAX_ITERATIONS)
 	{
 		z_real_new = z_real * z_real - z_imag * z_imag + const_i;
 		z_imag_new = 2 * fabs(z_real * z_imag) + const_r;

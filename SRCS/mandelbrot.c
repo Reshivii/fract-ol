@@ -6,7 +6,7 @@
 /*   By: aburnott <aburnott@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 13:15:56 by aburnott          #+#    #+#             */
-/*   Updated: 2023/01/20 10:54:17 by aburnott         ###   ########.fr       */
+/*   Updated: 2023/01/26 10:13:54 by aburnott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static int	ft_iteration(double const_i, double const_r)
 	old_r = 0;
 	old_i = 0;
 	i = 0;
-	while ((new_r * new_r + new_i * new_i) < 4 && i < 100)
+	while ((new_r * new_r + new_i * new_i) < 4 && i < MAX_ITERATIONS)
 	{
 		new_i = 2.0 * old_r * old_i + const_i;
 		new_r = old_r * old_r - old_i * old_i + const_r;
